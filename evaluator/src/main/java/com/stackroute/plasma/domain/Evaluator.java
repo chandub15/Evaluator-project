@@ -1,18 +1,43 @@
 package com.stackroute.plasma.domain;
 
 
+import lombok.*;
+
 import javax.swing.text.Element;
 
+
+@Data
+//@Builder
+//@Getter
+//@Setter
+//@NoArgsConstructor
+//@AllArgsConstructor
 public class Evaluator {
+    public String getTitle() {
+        return title;
+    }
 
-    private String url;
-    private Element description;
-    private String content;
+    public String getUrl() {
+        return url;
+    }
+
+    public String title;
+    public String url;
+    //private Element description;
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+ /*   private String content;
     private int level;
-    private float conf_score;
+    private float conf_score;*/
 
 
-    public Evaluator() {
+    /*public Evaluator() {
     }
 
     public Evaluator(String url, Element description, String content, int level, float conf_score) {
@@ -64,6 +89,6 @@ public class Evaluator {
     }
 
     public void setDescription(org.jsoup.nodes.Element element) {
-    }
+    }*/
 }
 
