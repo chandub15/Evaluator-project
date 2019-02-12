@@ -25,23 +25,37 @@ public class EvalController {
     }
 
 
-    @GetMapping("/doc")
+    @GetMapping("/content")
     public ResponseEntity<String> getHtmlContent() throws IOException {
         System.out.println(evalService.getHtmlContent());
         return new ResponseEntity<String>(evalService.getHtmlContent(), HttpStatus.CREATED);
     }
 
-    @GetMapping("/con")
-    public ResponseEntity<?> getContent() throws IOException {
-        return new ResponseEntity<>(evalService.calScore(), HttpStatus.OK);
+    @GetMapping("/title")
+    public ResponseEntity<?> getTitle() throws IOException {
+        return new ResponseEntity<>(evalService.titleTag(), HttpStatus.OK);
     }
 
 
-    @GetMapping("/contrast")
-    public ResponseEntity<?> getContent1() throws IOException {
-        return new ResponseEntity<>(evalService.getScore(), HttpStatus.OK);
+    @GetMapping("/head")
+    public ResponseEntity<?> getHead() throws IOException {
+        return new ResponseEntity<>(evalService.headTag(), HttpStatus.OK);
     }
 
+    @GetMapping("/body")
+    public ResponseEntity<?> getBody() throws IOException {
+        return new ResponseEntity<>(evalService.bodyTag(), HttpStatus.OK);
+    }
+
+   /* @GetMapping("/desc")
+    public ResponseEntity<?> getDescription() throws IOException {
+        return new ResponseEntity<>(evalService.description(), HttpStatus.OK);
+    }
+
+    @GetMapping("/key")
+    public ResponseEntity<?> getKeywords() throws IOException {
+        return new ResponseEntity<>(evalService.keywords(), HttpStatus.OK);
+    }*/
 //
 //    @PostMapping("/con")
 //    public ResponseEntity<?> postScore(@RequestBody Evaluator evaluator) throws IOException {
