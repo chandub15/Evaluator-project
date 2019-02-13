@@ -25,12 +25,12 @@ public class EvalController {
     }
 
 
-    @GetMapping("/content")
+ /*   @GetMapping("/content")
     public ResponseEntity<String> getHtmlContent() throws IOException {
         System.out.println(evalService.getHtmlContent());
         return new ResponseEntity<String>(evalService.getHtmlContent(), HttpStatus.CREATED);
     }
-
+*/
     @GetMapping("/title")
     public ResponseEntity<?> getTitle() throws IOException {
         return new ResponseEntity<>(evalService.titleTag(), HttpStatus.OK);
@@ -42,9 +42,20 @@ public class EvalController {
         return new ResponseEntity<>(evalService.headTag(), HttpStatus.OK);
     }
 
+    @GetMapping("/p")
+    public ResponseEntity<?> getParagraph() throws IOException {
+        return new ResponseEntity<>(evalService.pTag(), HttpStatus.OK);
+    }
+
     @GetMapping("/body")
     public ResponseEntity<?> getBody() throws IOException {
         return new ResponseEntity<>(evalService.bodyTag(), HttpStatus.OK);
+    }
+
+
+    @GetMapping("/score")
+    public ResponseEntity<?> getScore() throws IOException {
+        return new ResponseEntity<>(evalService.getScore(), HttpStatus.OK);
     }
 
    /* @GetMapping("/desc")
